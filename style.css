@@ -107,3 +107,7 @@ body {
   .form_field {
       padding-bottom: 10px;
   }
+
+  .login input {
+    padding-bottom: 10px;
+  }

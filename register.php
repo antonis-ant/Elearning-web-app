@@ -10,10 +10,23 @@
 
 include_once 'config.php';
 
+// Check connection
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+}
+
+// For simplicity, a commom encrypted password will be used 
+$hsd_password = password_hash('12345', PASSWORD_BCRYPT);
+
 // Add a 'teacher' user, print sql error in case query fails
 mysqli_query($con, "INSERT INTO users (fname, lname, loginame, role, password) 
- VALUES ('Βασίλης', 'Χατζηδημητρακόκουλος', 'basX@mail.com', 'teacher', '12345')") or die(mysqli_error($con));
+    VALUES ('Βασίλης', 'Χατζηδημητρακόκουλος', 'basX@mail.com', 'teacher','" . $hsd_password . "')") 
+    or die(mysqli_error($con));
 
 // Add a 'student' user, print sql error in case query fails
 mysqli_query($con, "INSERT INTO users (fname, lname, loginame, role, password) 
-VALUES ('Μακης', 'Χατζηπαρασκευόπουλος', 'makisX@mail.com', 'student', '12345')") or die(mysqli_error($con));
+    VALUES ('Μακης', 'Χατζηπαρασκευόπουλος', 'makisX@mail.com', 'student','" . $hsd_password . "')") 
+    or die(mysqli_error($con));
+
+
+echo 'Users registered successfully!';

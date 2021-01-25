@@ -5,18 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ανακοινώσεις</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- Navigation Menu Sidebar -->
-    <nav class=nav>
-        <a href="index.html" class="nav_link">Αρχική Σελίδα</a>
-        <a href="announcements.html" class="nav_link">Ανακοινώσεις</a>
-        <a href="communication.html" class="nav_link">Επικοινωνία</a>
-        <a href="documents.html" class="nav_link">Έγγραφα Μαθήματος</a>
-        <a href="assignments.html" class="nav_link">Εργασίες</a>
-    </nav>
+    <?php include('header.html') ?>
     <!-- Header Bar -->
     <div class="header_block">
         <h1>Ανακοινώσεις</h1>
@@ -40,6 +33,6 @@
     </div>
     <button onclick="scroll_top()" id="top_btn" title="Back To Top">Back to top</button>
 </body>
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 
 </html>

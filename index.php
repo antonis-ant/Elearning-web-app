@@ -3,8 +3,8 @@
 session_start();
 // If the user is not logged in redirect to the login page
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: login.php');
-	exit;
+    header('Location: login.php');
+    exit;
 }
 ?>
 
@@ -22,16 +22,19 @@ if (!isset($_SESSION['loggedin'])) {
     <?php include('header.html') ?>
     <!-- Header Bar -->
     <div class="header_block">
-        <h1>Αρχική Σελίδα</h1>
-        <div class='account'>
+        <div id="header_container">
+
+            <!-- <div class="page_title"> -->
+            <h1 class="center-horizontal">Αρχική Σελίδα</h1>
+            <!-- </div> -->
+
             <div class="dropdown">
                 <button class="dropbtn">Dropdown</button>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="#">Logout</a>
                 </div>
             </div>
+
         </div>
     </div>
     <div class="main_content_block center">

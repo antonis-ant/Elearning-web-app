@@ -37,7 +37,7 @@ $current_page_title = $pages[$page_filename];
                     <?= $_SESSION['fname'] . ' ' . $_SESSION['lname']. ' (' .  $_SESSION['user_role'] . ')'?>
                 </button>
                 <div class="dropdown-content">
-                    <a href="#">Logout</a>
+                    <a href="logout.php">Logout</a>
                 </div>
             </div>
         </div>

@@ -19,9 +19,8 @@ if (!isset($_SESSION['loggedin'])) {
 </head>
 
 <body>
-
     <?php include('header_menu.php') ?>
-    
+
     <div class="main_content_block center">
         <div class="content_container" id="documents_container">
             <ul class="object_list" id="announcements_list">
@@ -34,7 +33,6 @@ if (!isset($_SESSION['loggedin'])) {
                         </div>
                     </div>
                 </li>
-
             </ul>
         </div>
     </div>

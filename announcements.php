@@ -1,3 +1,13 @@
+<?php
+// Start session
+session_start();
+// If the user is not logged in redirect to the login page
+if (!isset($_SESSION['loggedin'])) {
+    header('Location: login.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +19,8 @@
 </head>
 
 <body>
-    <?php include('header.html') ?>
-    <!-- Header Bar -->
-    <div class="header_block">
-        <h1>Ανακοινώσεις</h1>
-    </div>
+    <?php include('header_menu.php') ?>
+    
     <div class="main_content_block center">
         <div class="content_container" id="announcements_container">
             <ul class="object_list" id="announcements_list">
@@ -27,7 +34,7 @@
                         </div>
                     </div>
                 </li>
-                
+
             </ul>
         </div>
     </div>

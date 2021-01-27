@@ -19,24 +19,8 @@ if (!isset($_SESSION['loggedin'])) {
 </head>
 
 <body>
-    <?php include('header.html') ?>
-    <!-- Header Bar -->
-    <div class="header_block">
-        <div id="header_container">
-
-            <!-- <div class="page_title"> -->
-            <h1 class="center-horizontal">Αρχική Σελίδα</h1>
-            <!-- </div> -->
-
-            <div class="dropdown">
-                <button class="dropbtn">Dropdown</button>
-                <div class="dropdown-content">
-                    <a href="#">Logout</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <?php include('header_menu.php') ?>
+    
     <div class="main_content_block center">
         <div id="homepage_container">
             <p>Καλωσορίσατε στον ιστοχώρο UniHub. Το UniHub είναι ένας δυναμικός ιστοχώρος που κατασκευάστηκε για την
@@ -49,6 +33,7 @@ if (!isset($_SESSION['loggedin'])) {
                 <li>Επικοινωνία</li>
                 <li>Έγγραφα Μαθήματος</li>
                 <li>Εργασίες</li>
+                <li><?= $_SERVER['PHP_SELF']?></li>
             </ul>
 
         </div>

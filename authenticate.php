@@ -9,7 +9,7 @@ if (!isset($_POST['loginame'], $_POST['password']) ) {
 }
 
 // Prepare SQL statement
-if ($stmt = $con->prepare('SELECT idusers, password, role FROM users WHERE loginame = ?')) {
+if ($stmt = $con->prepare('SELECT idusers, fname, lname, password, role FROM users WHERE loginame = ?')) {
     // Bind parameters
     $stmt->bind_param('s', $_POST['loginame']);
     // Execute statement
@@ -18,7 +18,7 @@ if ($stmt = $con->prepare('SELECT idusers, password, role FROM users WHERE login
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $password, $role);
+        $stmt->bind_result($id, $fname, $lname, $password, $role);
         $stmt->fetch();
         // Account exists, now we verify the password.
         if (password_verify($_POST['password'], $password)) {
@@ -28,9 +28,11 @@ if ($stmt = $con->prepare('SELECT idusers, password, role FROM users WHERE login
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['loginame'] = $_POST['loginame'];
             $_SESSION['id'] = $id;
+            $_SESSION['fname'] = $fname;
+            $_SESSION['lname'] = $lname;
             $_SESSION['user_role'] = $role;
             // Authentication successfull, redirect to home page
-            // echo 'Welcome ' . $_SESSION['loginame'] .'('. $_SESSION['user_role'] . ')!';
+            // echo 'Welcome ' . $_SESSION['loginame'] .'('. $_SESSION['user_role'] . ')!' . $_SESSION['fname'];
             header('Location: index.php');
         } else {
             // Incorrect password

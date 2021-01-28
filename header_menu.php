@@ -1,6 +1,6 @@
 <?php
 
-// Map each page file to page title.
+// Map each page file to a page title.
 $pages = array(
     "index.php" => "Αρχική Σελίδα",
     "announcements.php" => "Ανακοινώσεις",
@@ -20,7 +20,7 @@ $current_page_title = $pages[$page_filename];
 ?>
 
 <!-- Navigation Menu Sidebar -->
-<nav class=nav>
+<nav class="nav">
     <a href="index.php" class="nav_link"><?= $pages['index.php']?></a>
     <a href="announcements.php" class="nav_link"><?= $pages['announcements.php']?></a>
     <a href="communication.php" class="nav_link"><?= $pages['communication.php']?></a>
@@ -37,7 +37,7 @@ $current_page_title = $pages[$page_filename];
                     <?= $_SESSION['fname'] . ' ' . $_SESSION['lname']. ' (' .  $_SESSION['user_role'] . ')'?>
                 </button>
                 <div class="dropdown-content">
-                    <a href="logout.php">Logout</a>
+                    <a href="logout.php">Αποσύνδεση</a>
                 </div>
             </div>
         </div>

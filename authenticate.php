@@ -31,6 +31,7 @@ if ($stmt = $con->prepare('SELECT idusers, fname, lname, password, role FROM use
             $_SESSION['fname'] = $fname;
             $_SESSION['lname'] = $lname;
             $_SESSION['user_role'] = $role;
+            
             // Authentication successfull, redirect to home page
             // echo 'Welcome ' . $_SESSION['loginame'] .'('. $_SESSION['user_role'] . ')!' . $_SESSION['fname'];
             header('Location: index.php');
@@ -42,7 +43,6 @@ if ($stmt = $con->prepare('SELECT idusers, fname, lname, password, role FROM use
         // Incorrect username
         echo 'Incorrect username and/or password!';
     }
-
 
     // Close statemet
     $stmt->close();

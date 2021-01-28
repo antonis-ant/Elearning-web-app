@@ -19,24 +19,26 @@ if (!isset($_SESSION['loggedin'])) {
 </head>
 
 <body>
-    <?php include('header_menu.php') ?>
+    <div class="page_container">
+        <?php include('header_menu.php') ?>
 
-    <div class="main_content_block center">
-        <div class="content_container" id="documents_container">
-            <ul class="object_list" id="announcements_list">
-                <li class="object_list_item">
-                    <div class="object_container">
-                        <h2 class="document_header">Ανακοίνωση 1</h2>
-                        <div>
-                            <p class="document_field">Ημερομηνία: 12/12/2008 </p>
-                            <p><a href="">Download</a></p>
+        <div class="main_content_block center">
+            <div class="content_container" id="documents_container">
+                <ul class="object_list" id="announcements_list">
+                    <li class="object_list_item">
+                        <div class="object_container">
+                            <h2 class="document_header">Ανακοίνωση 1</h2>
+                            <div>
+                                <p class="document_field">Ημερομηνία: 12/12/2008 </p>
+                                <p><a href="">Download</a></p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
+        <button onclick="scroll_top()" id="top_btn" title="Back To Top">Back to top</button>
     </div>
-    <button onclick="scroll_top()" id="top_btn" title="Back To Top">Back to top</button>
 </body>
 <script src="js/script.js"></script>
 

@@ -18,14 +18,14 @@ if ($con->connect_error) {
 // For simplicity, a commom encrypted password will be used 
 $hsd_password = password_hash('12345', PASSWORD_BCRYPT);
 
-// Add a 'teacher' user, print sql error in case query fails
+// Add a 'tutor' user, print sql error in case query fails
 mysqli_query($con, "INSERT INTO users (fname, lname, loginame, role, password) 
-    VALUES ('Βασίλης', 'Χατζηδημητρακόκουλος', 'basX@mail.com', 'teacher','" . $hsd_password . "')") 
+    VALUES ('Αντώνης', 'Αντωνιάδης', 'antonis@mail.com', 'tutor','" . $hsd_password . "')") 
     or die(mysqli_error($con));
 
 // Add a 'student' user, print sql error in case query fails
 mysqli_query($con, "INSERT INTO users (fname, lname, loginame, role, password) 
-    VALUES ('Μακης', 'Χατζηπαρασκευόπουλος', 'makisX@mail.com', 'student','" . $hsd_password . "')") 
+    VALUES ('Μακης', 'Μάκης', 'makis@mail.com', 'student','" . $hsd_password . "')") 
     or die(mysqli_error($con));
 
 

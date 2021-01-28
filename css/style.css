@@ -11,7 +11,7 @@ body {
     text-align: justify;
 }
 
-/* Left-mounted navigation menu and top header*/
+/* NAVIGATION MENU & HEADER STYLES */
 .nav {
     position: fixed;
     top: 79.88px;
@@ -53,6 +53,7 @@ body {
     text-align: center;
 }
 
+
 /* MAIN CONTENT */
 .main_content_block {
     height: 100%;
@@ -67,6 +68,7 @@ body {
     padding: 20px;
 }
 
+
 /* HOME PAGE */
 #homepage_container {
     background-image: url("../img/main_page_image.jpg");
@@ -78,6 +80,7 @@ body {
     padding: 20px 100px;
     color: white;
 }
+
 
 /* OBJECT LISTS */
 .object_list {
@@ -105,6 +108,7 @@ body {
     left: 50%;
     /* transform: translateX(-50%); */
 }
+
 
 /* GENERAL FORM STYLING (using fexbox) */
 .form_page {
@@ -136,8 +140,7 @@ body {
 .flex_form input {
     border-radius: 3px;
     margin-bottom: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
     height: 35px;
     width: 200px;
 }
@@ -145,14 +148,15 @@ body {
 .flex_form textarea {
     border-radius: 3px;
     margin-bottom: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;    
+    padding: 5px;
 }
+
 
 /* LOGIN FORM STYLES*/
 #login_form {
     text-align: center;
 }
+
 
 /* NEW ENTRY FORM STYLES */
 .new_entry_form {
@@ -161,6 +165,7 @@ body {
 
 .new_entry_form input, textarea {
     width: 600px;
+    max-width: 600px;
 }
 
 
@@ -184,6 +189,7 @@ body {
     background-color: #555;
     color: white;
 }
+
 
 /* DROPDOWN BUTTON */
 .dropbtn {

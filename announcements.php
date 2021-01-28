@@ -6,6 +6,8 @@ if (!isset($_SESSION['loggedin'])) {
     header('Location: login.php');
     exit;
 }
+
+include('get_announcements.php');
 ?>
 
 <!DOCTYPE html>
@@ -24,25 +26,24 @@ if (!isset($_SESSION['loggedin'])) {
 
         <div class="main_content_block center">
             <div class="content_container" id="announcements_container">
+
                 <!-- Only show "create announcement" link if logged in user is tutor -->
-                <!-- <?php if ($_SESSION['user_role'] == 'tutor')
-                    echo "<div><p>Νέα Ανακοίνωση</p></div>";
-                ?> -->
-                <div>
-                    <p><a href="new_announcement_form.php">Νέα Ανακοίνωση</a></p>
-                </div>
+                <?php if ($_SESSION['user_role'] == 'tutor')
+                    echo "<p><a href='new_announcement_form.php'>Νέα Ανακοίνωση</a></p>";
+                ?>
                 <ul class="object_list" id="announcements_list">
+                    <?php foreach($announcements as $ann) { ?>
                     <li class="object_list_item">
                         <div class="object_container">
-                            <h2 class="announcement_header">Ανακοίνωση 1</h2>
+                            <h2 class="announcement_header">Ανακοίνωση <?=$ann['id']?></h2>
                             <div>
-                                <p class="announcement_field">Ημερομηνία: 12/12/2008 </p>
-                                <p class="announcement_field">Θέμα: Έναρξη μαθημάτων</p>
-                                <p class="announcement_field">Τα μαθήματα αρχίζουν την Δευτέρα 17/12/2008</p>
+                                <p class="announcement_field">Ημερομηνία: <?=$ann['date_created']?></p>
+                                <p class="announcement_field">Θέμα: <?=$ann['subject']?></p>
+                                <p class="announcement_field"><?=$ann['main_text']?></p>
                             </div>
                         </div>
                     </li>
-
+                    <?php } ?>
                 </ul>
             </div>
         </div>

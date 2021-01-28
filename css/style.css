@@ -99,7 +99,20 @@ body {
     border-radius: 4px;
 }
 
-.object_list_item div {
+.object_list_item div.list_object_header h2 {
+    display: inline;
+}
+
+.object_list_item div.list_object_header div.actions {
+    display: inline;
+    float: right;
+}
+
+.object_list_item div.list_object_header div.actions a {
+    padding-right: 5px;
+}
+
+.object_list_item div.list_object_body {
     padding-left: 30px;
 }
 

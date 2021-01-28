@@ -16,7 +16,7 @@ include('get_announcements.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ανακοινώσεις</title>
+    <title>Test</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -35,14 +35,9 @@ include('get_announcements.php');
                     <?php foreach($announcements as $ann) { ?>
                     <li class="object_list_item">
                         <div class="object_container">
-                            <div class='list_object_header'>
-                                <h2 class="announcement_header">Ανακοίνωση <?=$ann['id']?></h2>
-                                <div class="actions">
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                </div>
-                            </div>
-                            <div class="list_object_body">
+                            <h2 class="announcement_header">Ανακοίνωση <?=$ann['id']?></h2>
+                            <div class='edit'></div> 
+                            <div>
                                 <p class="announcement_field">Ημερομηνία: <?=$ann['date_created']?></p>
                                 <p class="announcement_field">Θέμα: <?=$ann['subject']?></p>
                                 <p class="announcement_field"><?=$ann['main_text']?></p>

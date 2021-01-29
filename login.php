@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="form_page">
-    <form class="flex_form" id="login_form" action="authenticate.php" method="POST">
+    <form class="flex_form" id="login_form" action="src/authentication/authenticate.php" method="POST">
                 <h1>Login</h1>
                 <input type="text" name="loginame" placeholder="Username" id="loginame">
                 <br>

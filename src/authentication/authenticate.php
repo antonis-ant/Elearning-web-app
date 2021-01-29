@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+include_once '../config.php';
 
 session_start();
 
@@ -34,7 +34,7 @@ if ($stmt = $con->prepare('SELECT idusers, fname, lname, password, role FROM use
             
             // Authentication successfull, redirect to home page
             // echo 'Welcome ' . $_SESSION['loginame'] .'('. $_SESSION['user_role'] . ')!' . $_SESSION['fname'];
-            header('Location: index.php');
+            header('Location: ../../index.php');
         } else {
             // Incorrect password
             echo 'Incorrect username and/or password!';

@@ -8,7 +8,7 @@ if (!isset($_SESSION['loggedin'])) {
 }
 
 // Get announcements script, gives access to 'announcements variable'.
-include('get_announcements.php');
+include_once('src/announcements/get_announcements.php');
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ include('get_announcements.php');
 
                 <!-- Only show "create announcement" link if logged in user is tutor -->
                 <?php if ($_SESSION['user_role'] == 'tutor')
-                    echo "<p><a href='announcement_form.php'>Νέα Ανακοίνωση</a></p>";
+                    echo "<p><a href='forms/announcement_form.php'>Νέα Ανακοίνωση</a></p>";
                 ?>
                 <ul class="object_list" id="announcements_list">
                     <!-- Dynamically create announcements list -->
@@ -42,8 +42,8 @@ include('get_announcements.php');
                                 <!-- If user has role of 'tutor', create edit & delete options -->
                                 <?php if ($_SESSION['user_role'] == 'tutor')
                                     echo '<div class="actions">
-                                            <a href="announcement_form.php?id='. $ann['id'] . '">Edit</a>
-                                            <a href="#">Delete</a>
+                                            <a href="forms/announcement_form.php?id='. $ann['id'] . '">Edit</a>
+                                            <a href="src/announcements/delete_announcement.php?id='. $ann['id'] . '">Delete</a>
                                           </div>';
                                 ?>
                             </div>

@@ -2,7 +2,8 @@
 /*
     Get all announcements from database 
 */
-include_once 'config.php';
+// include_once 'src/config.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/partB/src/config.php';
 
 $announcements = array();
 
@@ -24,9 +25,9 @@ if ($stmt = $con->prepare('SELECT * FROM announcements ORDER BY DATE_CREATED DES
             ));
         }
         // echo json encoded data
-        echo json_encode($announcements);
+        // echo json_encode($announcements);
     } else {
-        // echo error message.
+        // echo error message
         echo 'Announcements not found!';
     }
 }

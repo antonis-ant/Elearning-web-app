@@ -1,4 +1,7 @@
 <?php
+/*
+    Get all announcements from database 
+*/
 include_once 'config.php';
 
 $announcements = array();
@@ -11,7 +14,7 @@ if ($stmt = $con->prepare('SELECT * FROM announcements ORDER BY DATE_CREATED DES
 
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($id, $subject, $main_text, $date);
-        
+        // get every row returned from db query & save to an array
         while ($stmt->fetch()) {
             array_push($announcements, array(
                 "id" => $id,
@@ -20,10 +23,10 @@ if ($stmt = $con->prepare('SELECT * FROM announcements ORDER BY DATE_CREATED DES
                 "date_created" => $date
             ));
         }
-
-        // var_dump($announcements);
-
+        // echo json encoded data
+        echo json_encode($announcements);
     } else {
+        // echo error message.
         echo 'Announcements not found!';
     }
 }

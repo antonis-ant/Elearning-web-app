@@ -7,6 +7,7 @@ if (!isset($_SESSION['loggedin'])) {
     exit;
 }
 
+// Get announcements script, gives access to 'announcements variable'.
 include('get_announcements.php');
 ?>
 
@@ -29,18 +30,22 @@ include('get_announcements.php');
 
                 <!-- Only show "create announcement" link if logged in user is tutor -->
                 <?php if ($_SESSION['user_role'] == 'tutor')
-                    echo "<p><a href='new_announcement_form.php'>Νέα Ανακοίνωση</a></p>";
+                    echo "<p><a href='announcement_form.php'>Νέα Ανακοίνωση</a></p>";
                 ?>
                 <ul class="object_list" id="announcements_list">
+                    <!-- Dynamically create announcements list -->
                     <?php foreach($announcements as $ann) { ?>
-                    <li class="object_list_item">
+                    <li class="object_list_item" id="ann_<?=$ann['id']?>">
                         <div class="object_container">
                             <div class='list_object_header'>
                                 <h2 class="announcement_header">Ανακοίνωση <?=$ann['id']?></h2>
-                                <div class="actions">
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                </div>
+                                <!-- If user has role of 'tutor', create edit & delete options -->
+                                <?php if ($_SESSION['user_role'] == 'tutor')
+                                    echo '<div class="actions">
+                                            <a href="announcement_form.php?id='. $ann['id'] . '">Edit</a>
+                                            <a href="#">Delete</a>
+                                          </div>';
+                                ?>
                             </div>
                             <div class="list_object_body">
                                 <p class="announcement_field">Ημερομηνία: <?=$ann['date_created']?></p>
@@ -56,6 +61,8 @@ include('get_announcements.php');
         <button onclick="scroll_top()" id="top_btn" title="Back To Top">Back to top</button>
     </div>
 </body>
+<script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/announcements.js"></script>
 
 </html>

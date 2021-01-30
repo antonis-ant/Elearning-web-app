@@ -6,6 +6,9 @@ if (!isset($_SESSION['loggedin'])) {
     header('Location: login.php');
     exit;
 }
+
+// Get announcements script, gives access to 'announcements variable'.
+include_once('src/documents/get_documents.php');
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +27,11 @@ if (!isset($_SESSION['loggedin'])) {
 
         <div class="main_content_block center">
             <div class="content_container" id="documents_container">
+                <!-- Only show "create document" link if logged-in user is tutor -->
+                <?php if ($_SESSION['user_role'] == 'tutor')
+                    echo "<p><a href='forms/document_form.php'>Νέo Έγγραφο</a></p>";
+                ?>
+                <!-- Make this dynamic -->
                 <ul class="object_list" id="announcements_list">
                     <li class="object_list_item">
                         <div class="object_container">

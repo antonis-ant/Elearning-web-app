@@ -28,7 +28,7 @@
                 $path_value = $path;
             } else {
                 // echo error message.
-                echo 'Announcement not found!';
+                echo 'Document not found!';
             }
         }
     }
@@ -52,7 +52,7 @@
             ​<textarea id="doc_description" name="doc_description" rows="10" cols="70"
                 placeholder="Περιγραφή..."><?=$description_value?></textarea>
             <br>
-            <input type="hidden" name="MAX_FILE_SIZE" value="40000" />
+            <input type="hidden" name="MAX_FILE_SIZE" value="40000000" /> <!-- MAX file size 40MB -->
             <input type="file" name="doc_upload" id="doc_upload">
             <br>
             <!-- If form is for edit, create hidden field with id to pass on with POST request on submit. -->

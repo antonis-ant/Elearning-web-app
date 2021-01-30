@@ -38,7 +38,7 @@ include_once('src/announcements/get_announcements.php');
                     <li class="object_list_item" id="ann_<?=$ann['id']?>">
                         <div class="object_container">
                             <div class='list_object_header'>
-                                <h2 class="announcement_header">Ανακοίνωση <?=$ann['id']?></h2>
+                                <h2>Ανακοίνωση <?=$ann['id']?></h2>
                                 <!-- If user has role of 'tutor', create edit & delete options -->
                                 <?php if ($_SESSION['user_role'] == 'tutor')
                                     echo '<div class="actions">

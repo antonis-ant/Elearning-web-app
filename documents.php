@@ -33,15 +33,28 @@ include_once('src/documents/get_documents.php');
                 ?>
                 <!-- Make this dynamic -->
                 <ul class="object_list" id="announcements_list">
-                    <li class="object_list_item">
+                    <!-- Dynamically create announcements list -->
+                    <?php foreach($documents as $doc) { ?>
+                    <li class="object_list_item" id="doc_<?=$doc['id']?>">
                         <div class="object_container">
-                            <h2 class="document_header">Ανακοίνωση 1</h2>
-                            <div>
-                                <p class="document_field">Ημερομηνία: 12/12/2008 </p>
-                                <p><a href="">Download</a></p>
+                            <div class='list_object_header'>
+                                <h2 class="announcement_header">Έγγραφο <?=$doc['id']?></h2>
+                                <!-- If user has role of 'tutor', create edit & delete options -->
+                                <?php if ($_SESSION['user_role'] == 'tutor')
+                                    echo '<div class="actions">
+                                            <a href="forms/document_form.php?id='. $doc['id'] . '">Edit</a>
+                                            <a href="src/documents/delete_document.php?id='. $doc['id'] . '">Delete</a>
+                                          </div>';
+                                ?>
+                            </div>
+                            <div class="list_object_body">
+                                <p class="announcement_field">Τίτλος: <?=$doc['title']?></p>
+                                <p class="announcement_field">Θέμα: <?=$doc['description']?></p>
+                                <p class="announcement_field"><a href="<?=$doc['path']?>">Download</a></p>
                             </div>
                         </div>
                     </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

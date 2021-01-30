@@ -18,8 +18,7 @@ if (!$id) {
     if (mysqli_query($con, "INSERT INTO documents (title, description, path) 
     VALUES ('" . $title . "', '" . $decription . "', '" . $file_path . "')")) {
         // on success redirect to announcements page.
-        // header('Location: ../../documents.php');
-        die(var_dump($_FILES['doc_upload']));
+        header('Location: ../../documents.php');
     } else {
         die(mysqli_error($con));
     }

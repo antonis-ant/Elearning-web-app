@@ -34,23 +34,15 @@ if (!isset($_SESSION['loggedin'])) {
                     <li class="object_list_item">
                         <div class="object_container">
                             <h2 class="announcement_header">Αποστολή e-mail μέσω web φόρμας</h2>
-                            <div>
-                                <form action="">
-                                    <div class="form_field">
-                                        <label for="email">Αποστολέας:</label><br>
-                                        <input type="text" id="email" name="email">
-                                    </div>
-                                    <div class="form_field">
-                                        <label for="subject">Θέμα:</label><br>
-                                        <input type="text" id="subject" name="subject">
-                                    </div>
-                                    <div class="form_field">
-                                        <label for="body">Κείμενο:</label><br>
-                                        <textarea name="body" id="body" cols="40" rows="6"></textarea>
-                                    </div>
-                                    <div class="form_field">
-                                        <input type="submit" value="Submit">
-                                    </div>
+                            <div id="communication_form">
+                                <form class="flex_form new_entry_form" action="">
+                                    <input type="text" name="email_sender" placeholder="Αποστολέας" id="email_sender">
+                                    <br>
+                                    <input type="text" name="email_subject" placeholder="Θέμα" id="email_subject">
+                                    <br>
+                                    <textarea id="main_body" name="main_body" rows="10" cols="70" placeholder="Kείμενο"></textarea>
+                                    <br>
+                                    <button type="submit" name="send-email">Αποστολή</button>
                                 </form>
                             </div>
                         </div>

@@ -49,7 +49,7 @@ include_once('src/documents/get_documents.php');
                             <div class="list_object_body">
                                 <p class="announcement_field">Τίτλος: <?=$doc['title']?></p>
                                 <p class="announcement_field">Θέμα: <?=$doc['description']?></p>
-                                <p class="announcement_field"><a href="src/download_file.php?filename=<?=$doc['path']?>">Download</a></p>
+                                <p class="announcement_field"><a href="src/download_file.php?filename=<?=$doc['path']?>&filedir=documents">Download</a></p>
                             </div>
                         </div>
                     </li>

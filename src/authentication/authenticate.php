@@ -18,7 +18,7 @@ if ($stmt = $con->prepare('SELECT idusers, fname, lname, password, role FROM use
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $fname, $lname, $password, $role);
+        $stmt->bind_result($id, $fname, $lname, $password, $role); 
         $stmt->fetch();
         // Account exists, now we verify the password.
         if (password_verify($_POST['password'], $password)) {
@@ -38,10 +38,12 @@ if ($stmt = $con->prepare('SELECT idusers, fname, lname, password, role FROM use
         } else {
             // Incorrect password
             echo 'Incorrect username and/or password!';
+            header('Location: ../../login.php');
         }
     } else {
         // Incorrect username
         echo 'Incorrect username and/or password!';
+        header('Location: ../../login.php');
     }
 
     // Close statemet

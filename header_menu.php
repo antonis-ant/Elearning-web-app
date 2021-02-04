@@ -26,6 +26,9 @@ $current_page_title = $pages[$page_filename];
     <a href="communication.php" class="nav_link"><?= $pages['communication.php']?></a>
     <a href="documents.php" class="nav_link"><?= $pages['documents.php']?></a>
     <a href="assignments.php" class="nav_link"><?= $pages['assignments.php']?></a>
+    <?php if ($_SESSION['user_role'] == 'tutor')
+        echo '<a href="users.php" class="nav_link">Διαχείρηση Χρηστών</a>';
+    ?>
 </nav>
 
 <!-- Header Bar -->

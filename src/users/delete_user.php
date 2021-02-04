@@ -8,9 +8,9 @@ if ($id = isset($_GET['id']) ? $_GET['id'] : null) {
         die("Connection failed: " . $con->connect_error);
     }
 
-    if (mysqli_query($con, "DELETE FROM announcements WHERE id=" . $id . "")) {
+    if (mysqli_query($con, "DELETE FROM users WHERE idusers=" . $id . "")) {
         // on success redirect to announcements page.
-        header('Location: ../../announcements.php');
+        header('Location: ../../users.php');
     } else {
         die(mysqli_error($con));
     }

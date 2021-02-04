@@ -11,6 +11,12 @@ body {
     text-align: justify;
 }
 
+#home_page_list {
+    list-style: none;
+    padding-bottom: 20px;
+    color: white;
+}
+
 /* NAVIGATION MENU & HEADER STYLES */
 .nav {
     position: fixed;
@@ -57,7 +63,7 @@ body {
 /* MAIN CONTENT */
 .main_content_block {
     height: 100%;
-    background: #eeeeee;
+    background: lightslategray;
     margin-top: 79.8px;
     margin-left: auto;
     margin-right: auto;
@@ -90,13 +96,11 @@ body {
 
 .object_list_item {
     padding: 10px 20px;
-    background: aliceblue;
-    margin-bottom: 2px;
-    margin-top: 2px;
-    border-width: medium;
-    border-color: #222222;
-    border-style: solid;
-    border-radius: 4px;
+    background: white;
+    border-bottom: solid;
+    border-top: solid;
+    border-color: lightslategray;
+    border-width: thin;
 }
 
 .object_list_item div.list_object_header h2 {
@@ -150,7 +154,7 @@ body {
     height: 45.55px;
 }
 
-.flex_form input {
+.flex_form input, select {
     border-radius: 3px;
     margin-bottom: 10px;
     padding: 5px;
@@ -176,7 +180,7 @@ body {
     text-align: center;
 }
 
-.new_entry_form input, textarea {
+.new_entry_form input, textarea, select {
     width: 600px;
     max-width: 600px;
 }

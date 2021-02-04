@@ -52,7 +52,7 @@ include_once('src/assignments/get_assignments.php');
 
                                 <p class="announcement_field">Εκφώνηση:
                                     Κατεβάστε την εκφώνηση της εργασίας από <a
-                                        href="src/download_file.php?filename=<?=$ass['path']?>">εδώ</a>
+                                        href="src/download_file.php?filename=<?=$ass['path']?>&filedir=assignments">εδώ</a>
                                 </p>
 
                                 <p class="announcement_field">Παραδοτέα: </p>

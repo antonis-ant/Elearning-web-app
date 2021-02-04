@@ -4,7 +4,7 @@ $filedir = basename($_GET['filedir']);
 $path = '../uploads/';
 $download_file = $path . $filedir . '/' . $filename;
 
-die($download_file);
+// die($download_file);
 
 if (!empty($filename)) {
     // first check file exists on given path.

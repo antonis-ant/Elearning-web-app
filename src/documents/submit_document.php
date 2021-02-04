@@ -36,7 +36,7 @@ if (!$id) {
 
 function save_file() {
     // build path for file to be stored
-    $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/partB/uploads/';
+    $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/partB/uploads/documents/';
     $target_file = $target_dir . basename($_FILES["doc_upload"]["name"]);
     // actually save the file
     move_uploaded_file($_FILES['doc_upload']['tmp_name'], $target_file);

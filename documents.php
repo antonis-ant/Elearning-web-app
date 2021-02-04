@@ -7,7 +7,7 @@ if (!isset($_SESSION['loggedin'])) {
     exit;
 }
 
-// Get announcements script, gives access to 'announcements variable'.
+// Get documents script, gives access to 'documents variable'.
 include_once('src/documents/get_documents.php');
 ?>
 
@@ -31,14 +31,13 @@ include_once('src/documents/get_documents.php');
                 <?php if ($_SESSION['user_role'] == 'tutor')
                     echo "<p><a href='forms/document_form.php'>Νέo Έγγραφο</a></p>";
                 ?>
-                <!-- Make this dynamic -->
                 <ul class="object_list" id="announcements_list">
                     <!-- Dynamically create announcements list -->
                     <?php foreach($documents as $doc) { ?>
                     <li class="object_list_item" id="doc_<?=$doc['id']?>">
                         <div class="object_container">
                             <div class='list_object_header'>
-                                <h2 class="announcement_header">Έγγραφο <?=$doc['id']?></h2>
+                                <h2>Έγγραφο <?=$doc['id']?></h2>
                                 <!-- If user has role of 'tutor', create edit & delete options -->
                                 <?php if ($_SESSION['user_role'] == 'tutor')
                                     echo '<div class="actions">
@@ -50,7 +49,7 @@ include_once('src/documents/get_documents.php');
                             <div class="list_object_body">
                                 <p class="announcement_field">Τίτλος: <?=$doc['title']?></p>
                                 <p class="announcement_field">Θέμα: <?=$doc['description']?></p>
-                                <p class="announcement_field"><a href="<?=$doc['path']?>">Download</a></p>
+                                <p class="announcement_field"><a href="src/download_file.php?filename=<?=$doc['path']?>">Download</a></p>
                             </div>
                         </div>
                     </li>

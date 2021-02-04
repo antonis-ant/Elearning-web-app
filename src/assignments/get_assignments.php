@@ -4,29 +4,30 @@
 */
 include_once $_SERVER['DOCUMENT_ROOT'] . '/partB/src/config.php';
 
-$documents = array();
+$assignments = array();
 
-if ($stmt = $con->prepare('SELECT * FROM documents ORDER BY id DESC')) {
+if ($stmt = $con->prepare('SELECT * FROM assignments ORDER BY id DESC')) {
     // Execute statement
     $stmt->execute();
     // Store the result
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $title, $description, $path);
+        $stmt->bind_result($id, $goals, $path, $deliverables, $due_date);
         // get every row returned from db query & save to an array
         while ($stmt->fetch()) {
-            array_push($documents, array(
+            array_push($assignments, array(
                 "id" => $id,
-                "title" => $title,
-                "description" => $description,
-                "path" => $path
+                "goals" => $goals,
+                "path" => $path,
+                "deliverables" => $deliverables,
+                "due_date" => $due_date
             ));
         }
         // echo json encoded data
         // echo json_encode($documents);
     } else {
         // echo error message
-        echo 'Documents not found!';
+        echo 'Assignmnets not found!';
     }
 }

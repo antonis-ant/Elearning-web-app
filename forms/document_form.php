@@ -7,7 +7,7 @@
     // if id is provided update corresponding entry
     $id = isset($_GET['id']) ? $_GET['id'] : null;
     if ($id) {
-        $form_title = "Επεξεργασία Δημοσίευσης";
+        $form_title = "Επεξεργασία Εγγράφου";
         // Fetch corresponding object from db
         include_once $_SERVER['DOCUMENT_ROOT'] . '/partB/src/config.php';
 
